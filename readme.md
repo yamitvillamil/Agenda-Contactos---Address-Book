@@ -5,3 +5,4 @@
 3. Cada elemento de la lista tendrá un contacto con los datos clásicos (nombre, dirección, celular, teléfono particular, email) Al hacer click en un elemento de la lista, este se expanderá mostrando esos datos.
 4. El proyecto debe utilizar OOP, prototype
 5. El proyecto utiliza Handlebar para manejo de templates
+6. Changed OOP core.js to Backbone Framework
