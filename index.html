@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Agenda de Contactos</title>
+	<link rel="stylesheet" href="css/foundation.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="js/modernizr.js"></script>
+</head>
+<body>
+	
+	<div class="row holder">
+		<div class="large-5 columns left-box">
+			<div class="sub-header">
+				<h2>Agenda de Contactos</h2>
+				<hr>
+			</div>
+			<form id="form_cont" data-abide>
+				<div class="form-calendar">
+					<div class="row double">
+						<div class="large-6 columns">
+							<input id="nombres" type="text" placeholder="Nombres" required />
+							<small class="error">Ups, este campo es requerido.</small>
+						</div>
+						<div class="large-6 columns">
+							<input id="apellidos" type="text" placeholder="Apellidos" />
+						</div>
+					</div>
+					<div class="row double">
+						<div class="large-6 columns">
+							<input id="celular" type="number" placeholder="Celular" required />
+							<small class="error">Ups, este campo es requerido.</small>
+						</div>
+						<div class="large-6 columns">
+							<input id="telefono" type="text" placeholder="Teléfono" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-12 columns">
+							<input id="direccion" type="text" placeholder="Dirección" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-12 columns">
+							<input id="empresa" type="text" placeholder="Empresa" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-12 columns">
+							<fieldset>
+								<legend>Correo electrónico</legend>
+								<label><small>required</small></label>
+								<input id="email" type="email" placeholder="Email" required />
+								<small class="error">Ups, este campo es requerido.</small>
+							</fieldset>						
+						</div>
+					</div>
+				</div>
+				<button id="submit" class="submit" type="submit">Submit</button>
+			</form>
+		</div>
+		<div class="large-7 columns right-box">
+			<div id="list-element" class="list">
+				<dl id="user-list">
+					<script id="cont-list-template" type="text/x-handlebars-templates">
+						{{#each this}}
+							<dt id="user-{{celular}}">{{nombre}} <strong>{{apellido}}</strong></dt>
+							<dd>
+								<ul>
+									<li><strong>Celular:</strong> {{celular}}</li>
+									<li><strong>Telefono:</strong> {{telefono}}</li>	
+									<li><strong>Dirección:</strong>: {{direccion}}</li>
+									<li><strong>Empresa:</strong>: {{empresa}}</li>
+									<li><strong>Correo electrónico:</strong>: {{email}}</li>
+								</ul>
+								<a data-op="edit" data-id="{{celular}}" href="#" class="small success button btn_edit">Editar</a>
+								<a data-op="remove" data-id="{{celular}}" href="#" class="small alert button btn_delet">Eliminar</a>
+							</dd>
+						{{/each}}
+					</script>
+				</dl>
+			</div>
+		</div>
+	</div>
+	
+	
+	<script src="js/jquery.js"></script>
+	<script src="js/foundation.min.js"></script>
+	<script src="js/handlebars-v1.3.0.js"></script>
+	<script src="js/core.js"></script>
+	<script>
+	  $(document).foundation();
+	</script>
+</body>
+</html>
